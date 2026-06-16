@@ -1,0 +1,136 @@
+.support-section {
+  padding: 15px 20px;
+  background: #ffffff;
+}
+
+.support-container {
+  max-width: 85%;
+  margin: auto;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  gap: 60px;
+}
+
+.support-image {
+  flex: 1;
+}
+
+.support-image img {
+  width: 100%;
+  border-radius: 24px;
+
+  object-fit: cover;
+
+  box-shadow:
+    0 20px 40px rgba(0,0,0,.08);
+}
+
+.support-content {
+  flex: 1;
+}
+
+.support-badge {
+  display: inline-block;
+
+  background: #eff6ff;
+  color: #2563eb;
+
+  padding: 10px 18px;
+
+  border-radius: 50px;
+
+  font-size: 14px;
+  font-weight: 600;
+
+  margin-bottom: 20px;
+}
+
+.support-content h2 {
+  font-size: 42px;
+  color: #1f2937;
+  margin-bottom: 20px;
+}
+
+.support-content p {
+  color: #64748b;
+  line-height: 1.9;
+  margin-bottom: 30px;
+}
+
+.support-features {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 15px;
+  margin-bottom: 35px;
+}
+
+.feature {
+  color: #334155;
+  font-weight: 500;
+}
+
+.support-buttons {
+  display: flex;
+  gap: 15px;
+  flex-wrap: wrap;
+}
+
+.whatsapp-btn,
+.youtube-btn {
+
+  display: flex;
+  align-items: center;
+  gap: 10px;
+
+  text-decoration: none;
+
+  padding: 14px 24px;
+
+  border-radius: 12px;
+
+  font-weight: 600;
+
+  transition: .3s;
+}
+
+.whatsapp-btn {
+  background: #25D366;
+  color: white;
+}
+
+.youtube-btn {
+  background: #FF0000;
+  color: white;
+}
+
+.whatsapp-btn:hover,
+.youtube-btn:hover {
+  transform: translateY(-4px);
+}
+
+@media(max-width:992px){
+
+  .support-container{
+    flex-direction: column;
+  }
+
+  .support-content{
+    text-align:center;
+  }
+
+  .support-features{
+    grid-template-columns:1fr;
+  }
+
+  .support-buttons{
+    justify-content:center;
+  }
+
+  .support-content h2{
+    font-size:32px;
+  }
+
+}

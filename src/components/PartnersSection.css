@@ -1,0 +1,126 @@
+#partners {
+  margin-top: 2.5rem;
+}
+
+.partners-section {
+  width: 80%;
+  margin: auto;
+  overflow: hidden;
+}
+
+.partners-header {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.partners-header h2 {
+  font-size: 42px;
+  font-weight: 700;
+  color: #1f2937;
+  margin-bottom: 15px;
+}
+
+.partners-header p {
+  max-width: 700px;
+  margin: auto;
+  color: #64748b;
+  line-height: 1.8;
+}
+
+.rtl {
+  direction: rtl;
+}
+
+.ltr {
+  direction: ltr;
+}
+
+/* Swiper */
+.partners-swiper {
+  overflow: hidden;
+  direction: ltr !important;
+}
+
+.partners-swiper .swiper-wrapper {
+  transition-timing-function: linear !important;
+  align-items: center;
+}
+
+.partners-swiper .swiper-slide {
+  width: auto !important;
+}
+
+.partner-card {
+  height: 120px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.partner-card img {
+  width: 100%;
+  max-width: 140px;
+
+  height: 80px;
+
+  object-fit: contain;
+
+  opacity: 0.75;
+
+  transition:
+    transform 0.35s ease,
+    opacity 0.35s ease;
+
+  will-change: transform;
+}
+
+.partner-card:hover img {
+  opacity: 1;
+  transform: scale(1.08);
+}
+
+@media (max-width: 1200px) {
+  .partners-section {
+    width: 90%;
+  }
+}
+
+@media (max-width: 768px) {
+  .partners-section {
+    width: 95%;
+  }
+
+  .partners-header h2 {
+    font-size: 32px;
+  }
+
+  .partners-header p {
+    font-size: 14px;
+  }
+
+  .partner-card {
+    height: 90px;
+  }
+
+  .partner-card img {
+    max-width: 100px;
+    height: 60px;
+  }
+}
+
+@media (max-width: 468px) {
+  .partners-section {
+    width: 100%;
+    padding: 0 15px;
+  }
+
+  .partners-header h2 {
+    font-size: 28px;
+  }
+
+  .partner-card img {
+    max-width: 85px;
+    height: 50px;
+  }
+}

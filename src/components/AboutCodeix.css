@@ -1,0 +1,276 @@
+.about-codeix {
+  margin-top: 2.5rem;
+  padding: 30px;
+  background: #ffffff;
+
+  margin: auto;
+
+  width: 100%;
+  max-width: 85%;
+}
+
+.about-codeix-container {
+  max-width: 1400px;
+
+  margin: auto;
+
+  display: grid;
+
+  grid-template-columns: 1fr 1fr;
+
+  gap: 80px;
+
+  align-items: center;
+}
+
+.about-codeix-badge {
+  display: inline-block;
+
+  padding: 10px 18px;
+
+  border-radius: 50px;
+
+  background: #eff6ff;
+
+  color: #2563eb;
+
+  font-weight: 600;
+
+  margin-bottom: 20px;
+}
+
+.about-codeix-content h2 {
+  font-size: 52px;
+
+  line-height: 1.3;
+
+  color: #111827;
+
+  margin-bottom: 20px;
+}
+
+.about-codeix-content p {
+  color: #6b7280;
+
+  line-height: 1.9;
+
+  font-size: 17px;
+}
+
+/* الخدمات */
+.about-codeix-services {
+  margin-top: 40px;
+
+  display: grid;
+
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+
+  gap: 16px;
+}
+
+.about-codeix-service {
+  background: #fff;
+
+  border: 1px solid #e5e7eb;
+
+  border-radius: 18px;
+
+  padding: 18px;
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 12px;
+
+  min-height: 80px;
+
+  transition: 0.3s;
+}
+
+.about-codeix-service svg {
+  color: #2563eb;
+
+  font-size: 20px;
+
+  min-width: 20px;
+}
+
+.about-codeix-service span {
+  font-size: 14px;
+
+  line-height: 1.6;
+}
+
+.about-codeix-service:hover {
+  transform: translateY(-6px);
+
+  border-color: #2563eb;
+
+  box-shadow: 0 12px 30px rgba(37, 99, 235, 0.08);
+}
+
+/* visual */
+.about-codeix-visual {
+  position: relative;
+
+  display: flex;
+
+  justify-content: center;
+
+  align-items: center;
+}
+
+.about-codeix-glow {
+  width: 420px;
+
+  height: 420px;
+
+  border-radius: 50%;
+
+  background:
+    radial-gradient(
+      circle,
+      rgba(37, 99, 235, 0.15),
+      transparent 70%
+    );
+}
+
+.about-codeix-card {
+  position: absolute;
+
+  width: 340px;
+
+  padding: 35px;
+
+  border-radius: 28px;
+
+  background: white;
+
+  border: 1px solid #e5e7eb;
+
+  text-align: center;
+
+  box-shadow: 0 20px 50px rgba(15, 23, 42, 0.08);
+
+  animation: floatCodeix 5s ease-in-out infinite;
+}
+
+.about-codeix-card svg {
+  font-size: 60px;
+
+  color: #2563eb;
+
+  margin-bottom: 20px;
+}
+
+.about-codeix-card h3 {
+  font-size: 32px;
+
+  margin-bottom: 15px;
+
+  color: #111827;
+}
+
+.about-codeix-card p {
+  color: #6b7280;
+
+  line-height: 1.8;
+}
+
+@keyframes floatCodeix {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-12px);
+  }
+}
+
+html[dir="rtl"] .about-codeix-content {
+  text-align: right;
+}
+
+html[dir="ltr"] .about-codeix-content {
+  text-align: left;
+}
+
+/* Tablet */
+@media (max-width: 991px) {
+  .about-codeix {
+    max-width: 95%;
+  }
+
+  .about-codeix-container {
+    grid-template-columns: 1fr;
+
+    gap: 60px;
+  }
+
+  .about-codeix-content h2 {
+    font-size: 38px;
+  }
+
+  /* 2 في الصف */
+  .about-codeix-services {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .about-codeix-card {
+    width: 300px;
+  }
+
+  .about-codeix-glow {
+    width: 300px;
+
+    height: 300px;
+  }
+}
+
+/* Mobile */
+@media (max-width: 576px) {
+  .about-codeix {
+    max-width: 100%;
+
+    padding: 20px;
+  }
+
+  .about-codeix-content h2 {
+    font-size: 30px;
+  }
+
+  .about-codeix-content p {
+    font-size: 15px;
+  }
+
+  /* 2 في الصف */
+  .about-codeix-services {
+    grid-template-columns: repeat(2, 1fr);
+
+    gap: 12px;
+  }
+
+  .about-codeix-service {
+    padding: 14px;
+
+    min-height: 90px;
+  }
+
+  .about-codeix-service span {
+    font-size: 13px;
+  }
+
+  .about-codeix-card {
+    width: 260px;
+
+    padding: 25px;
+  }
+
+  .about-codeix-glow {
+    width: 250px;
+
+    height: 250px;
+  }
+}

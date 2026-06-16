@@ -1,0 +1,302 @@
+/* =========================
+   SERVICES SECTION
+========================= */
+
+.services-section {
+  padding: 15px 6%;
+  background: #f5f7fb;
+  position: relative;
+  overflow: hidden;
+}
+
+.services-section::before {
+  content: "";
+
+  position: absolute;
+  top: -250px;
+  right: -200px;
+
+  width: 500px;
+  height: 500px;
+
+  border-radius: 50%;
+
+  background: rgba(255, 106, 0, 0.08);
+
+  filter: blur(120px);
+}
+
+.services-section::after {
+  content: "";
+
+  position: absolute;
+  bottom: -250px;
+  left: -200px;
+
+  width: 450px;
+  height: 450px;
+
+  border-radius: 50%;
+
+  background: rgba(255, 106, 0, 0.05);
+
+  filter: blur(120px);
+}
+
+/* =========================
+   HEADER
+========================= */
+
+.services-header {
+  text-align: center;
+  margin-bottom: 80px;
+  position: relative;
+  z-index: 2;
+}
+
+.services-badge {
+  display: inline-block;
+
+  padding: 12px 26px;
+
+  border-radius: 50px;
+
+  background: rgba(255, 106, 0, 0.08);
+
+  color: #ff6a00;
+
+  border: 1px solid rgba(255, 106, 0, 0.15);
+
+  font-weight: 700;
+
+  margin-bottom: 20px;
+}
+
+.services-header h2 {
+  font-size: 48px;
+  font-weight: 800;
+
+  color: #111827;
+
+  margin: 0;
+}
+
+/* =========================
+   GRID
+========================= */
+
+.services-grid {
+  position: relative;
+  z-index: 2;
+
+  display: grid;
+
+  grid-template-columns:
+    repeat(auto-fit, minmax(300px, 1fr));
+
+  gap: 35px;
+}
+
+/* =========================
+   CARD
+========================= */
+
+.service-card {
+  position: relative;
+
+  background: #fff;
+
+  border-radius: 24px;
+
+  overflow: hidden;
+
+  box-shadow:
+    0 15px 35px rgba(0, 0, 0, 0.08);
+
+  transition:
+    transform .45s ease,
+    box-shadow .45s ease;
+
+  animation: cardShow .8s forwards;
+
+  opacity: 0;
+}
+
+/* Border Glow */
+
+.service-card::before {
+  content: "";
+
+  position: absolute;
+  inset: 0;
+
+  border-radius: 24px;
+
+  padding: 1px;
+
+  background:
+    linear-gradient(
+      135deg,
+      rgba(255,106,0,.6),
+      transparent,
+      transparent
+    );
+
+  -webkit-mask:
+    linear-gradient(#fff 0 0) content-box,
+    linear-gradient(#fff 0 0);
+
+  -webkit-mask-composite: xor;
+
+  pointer-events: none;
+}
+
+/* Orange Glow */
+
+.service-card::after {
+  content: "";
+
+  position: absolute;
+
+  width: 220px;
+  height: 220px;
+
+  background:
+    rgba(255,106,0,.18);
+
+  border-radius: 50%;
+
+  filter: blur(80px);
+
+  bottom: -120px;
+  right: -120px;
+
+  opacity: 0;
+
+  transition: .45s;
+}
+
+.service-card:hover::after {
+  opacity: 1;
+}
+
+.service-card:hover {
+  transform:
+    translateY(-15px);
+
+  box-shadow:
+    0 30px 60px rgba(0,0,0,.15);
+}
+
+/* =========================
+   IMAGE
+========================= */
+
+.service-image {
+  width: 100%;
+  height: 240px;
+
+  object-fit: cover;
+
+  transition:
+    transform .6s ease;
+}
+
+.service-card:hover .service-image {
+  transform: scale(1.08);
+}
+
+/* =========================
+   TEXT
+========================= */
+
+.service-card h3 {
+  font-size: 24px;
+
+  font-weight: 800;
+
+  color: #111827;
+
+  text-align: center;
+
+  padding:
+    25px 20px 12px;
+}
+
+.service-card p {
+  font-size: 16px;
+
+  line-height: 1.9;
+
+  color: #6b7280;
+
+  text-align: center;
+
+  padding:
+    0 25px 30px;
+
+  min-height: 120px;
+}
+.service-content {
+  padding: 10px 0;
+}
+.service-image {
+  width: 100%;
+  height: 250px;
+  display: block;
+  object-fit: cover;
+  transition: transform .6s ease;
+}
+/* =========================
+   ANIMATION
+========================= */
+
+@keyframes cardShow {
+  from {
+    opacity: 0;
+
+    transform:
+      translateY(80px)
+      scale(.95);
+  }
+
+  to {
+    opacity: 1;
+
+    transform:
+      translateY(0)
+      scale(1);
+  }
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media (max-width: 992px) {
+  .services-header h2 {
+    font-size: 36px;
+  }
+}
+
+@media (max-width: 768px) {
+  .services-section {
+    padding: 90px 20px;
+  }
+
+  .services-header h2 {
+    font-size: 28px;
+  }
+
+  .service-image {
+    height: 220px;
+  }
+
+  .service-card h3 {
+    font-size: 22px;
+  }
+
+  .service-card p {
+    min-height: auto;
+  }
+}
