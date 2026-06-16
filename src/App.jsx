@@ -1,122 +1,94 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from './assets/vite.svg'
-import heroImg from './assets/hero.png'
-import './App.css'
+import { useState, useEffect } from 'react';
+import './App.css';
+import Navbar from './components/Navbar';
+import Home from './components/Home';
+import ThemesSection from './components/ThemesSection';
+import ServicesShowcase from './components/ServicesShowcase';
+import ServicesSection from './components/ServicesSection';
+import SkillsSection from './components/SkillsSection';
+import StatsSection from './components/StatsSection';
+import FAQSection from './components/FAQSection';
+import TestimonialsSection from './components/TestimonialsSection';
+import Footer from './components/Footer';
+import SupportSection from './components/SupportSection';
+import PartnersSection from './components/PartnersSection';
+import AboutCodeix from './components/AboutCodeix';
+import ContactCodeix from './components/ContactCodeix';
+
 
 function App() {
-  const [count, setCount] = useState(0)
+  const [lang, setLang] = useState('ar');
+  const toggleLanguage = () => {
+    setLang((prev) => (prev === 'ar' ? 'en' : 'ar'));
+  };
+  
+  useEffect(() => {
+    document.documentElement.dir =
+    lang === 'ar' ? 'rtl' : 'ltr';
+    
+    document.documentElement.lang = lang;
+  }, [lang]);
+  
+return (
+  <div className="min-h-screen bg-gray-50">
 
-  return (
-    <>
-      <section id="center">
-        <div className="hero">
-          <img src={heroImg} className="base" width="170" height="179" alt="" />
-          <img src={reactLogo} className="framework" alt="React logo" />
-          <img src={viteLogo} className="vite" alt="Vite logo" />
-        </div>
-        <div>
-          <h1>Get started</h1>
-          <p>
-            Edit <code>src/App.jsx</code> and save to test <code>HMR</code>
-          </p>
-        </div>
-        <button
-          type="button"
-          className="counter"
-          onClick={() => setCount((count) => count + 1)}
-        >
-          Count is {count}
-        </button>
-      </section>
+    <Navbar
+      lang={lang}
+      toggleLanguage={toggleLanguage}
+    />
 
-      <div className="ticks"></div>
+    <section id="home">
+      <Home language={lang} />
+    </section>
 
-      <section id="next-steps">
-        <div id="docs">
-          <svg className="icon" role="presentation" aria-hidden="true">
-            <use href="/icons.svg#documentation-icon"></use>
-          </svg>
-          <h2>Documentation</h2>
-          <p>Your questions, answered</p>
-          <ul>
-            <li>
-              <a href="https://vite.dev/" target="_blank">
-                <img className="logo" src={viteLogo} alt="" />
-                Explore Vite
-              </a>
-            </li>
-            <li>
-              <a href="https://react.dev/" target="_blank">
-                <img className="button-icon" src={reactLogo} alt="" />
-                Learn more
-              </a>
-            </li>
-          </ul>
-        </div>
-        <div id="social">
-          <svg className="icon" role="presentation" aria-hidden="true">
-            <use href="/icons.svg#social-icon"></use>
-          </svg>
-          <h2>Connect with us</h2>
-          <p>Join the Vite community</p>
-          <ul>
-            <li>
-              <a href="https://github.com/vitejs/vite" target="_blank">
-                <svg
-                  className="button-icon"
-                  role="presentation"
-                  aria-hidden="true"
-                >
-                  <use href="/icons.svg#github-icon"></use>
-                </svg>
-                GitHub
-              </a>
-            </li>
-            <li>
-              <a href="https://chat.vite.dev/" target="_blank">
-                <svg
-                  className="button-icon"
-                  role="presentation"
-                  aria-hidden="true"
-                >
-                  <use href="/icons.svg#discord-icon"></use>
-                </svg>
-                Discord
-              </a>
-            </li>
-            <li>
-              <a href="https://x.com/vite_js" target="_blank">
-                <svg
-                  className="button-icon"
-                  role="presentation"
-                  aria-hidden="true"
-                >
-                  <use href="/icons.svg#x-icon"></use>
-                </svg>
-                X.com
-              </a>
-            </li>
-            <li>
-              <a href="https://bsky.app/profile/vite.dev" target="_blank">
-                <svg
-                  className="button-icon"
-                  role="presentation"
-                  aria-hidden="true"
-                >
-                  <use href="/icons.svg#bluesky-icon"></use>
-                </svg>
-                Bluesky
-              </a>
-            </li>
-          </ul>
-        </div>
-      </section>
+    <section id="services">
+      <ServicesSection language={lang} />
+    </section>
 
-      <div className="ticks"></div>
-      <section id="spacer"></section>
-    </>
-  )
+    <section id="themes">
+      <ThemesSection language={lang} />
+    </section>
+
+    <section id="stats">
+      <StatsSection language={lang} />
+    </section>
+
+    <section id="showcase">
+      <ServicesShowcase language={lang} />
+    </section>
+
+    <section id="support">
+      <SupportSection language={lang} />
+    </section>
+
+    <section id="partners">
+      <PartnersSection language={lang} />
+    </section>
+
+    <section id="skills">
+      <SkillsSection language={lang} />
+    </section>
+
+    <section id="about">
+      <AboutCodeix language={lang} />
+    </section>
+
+    <section id="contact">
+      <ContactCodeix language={lang} />
+    </section>
+
+    <section id="faq">
+      <FAQSection language={lang} />
+    </section>
+
+    <section id="testimonials">
+      <TestimonialsSection language={lang} />
+    </section>
+
+    <Footer language={lang} />
+
+  </div>
+);
 }
 
-export default App
+export default App;
