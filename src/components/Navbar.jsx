@@ -136,7 +136,7 @@ const Navbar = ({ lang, toggleLanguage }) => {
         </a>
 
         <a
-          href="#portfolio"
+          href="#themes"
           className="mobile-nav-link"
           onClick={() => setIsOpen(false)}
         >

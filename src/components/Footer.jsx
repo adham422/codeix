@@ -1,6 +1,6 @@
 import React from "react";
 import "./Footer.css";
-import homeImage from '../../images/home.png';
+import homeImage from '../../images/logo.png';
 import {
   FaFacebookF,
   FaLinkedinIn,
