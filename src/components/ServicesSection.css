@@ -134,13 +134,7 @@
 
   padding: 1px;
 
-  background:
-    linear-gradient(
-      135deg,
-      rgba(255,106,0,.6),
-      transparent,
-      transparent
-    );
+  background:#fff;
 
   -webkit-mask:
     linear-gradient(#fff 0 0) content-box,
